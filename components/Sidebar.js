@@ -15,8 +15,10 @@ function Sidebar() {
       <Image
         src="https://rb.gy/xkacau"
         width={56}
-        height={56}
-        objectFit="contain"
+        height={55}
+        className="object-contain"
+        alt=""
+        priority
       />
       <div className="flex flex-col bg-orange-500 space-y-8">
         <HomeIcon className="sidebarIcon text-white opacity-[0.85]" />
