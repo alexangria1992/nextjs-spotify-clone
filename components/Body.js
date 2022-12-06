@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import Search from "./Search";
 import Poster from "./Poster";
 
-function Body({ spotifyApi }) {
+function Body({ spotifyApi, chooseTrack }) {
   const { data: session } = useSession();
 
   const [search, setSearch] = useState("");
@@ -70,20 +70,24 @@ function Body({ spotifyApi }) {
       xl:grid-cols-4 gap-x-4 gap-y-8 p-4"
       >
         {searchResults.length === 0
-          ? newReleases.slice(0, 4).map((track) => (
-              <Poster
-                key={track.id}
-                track={track}
-                // chooseTrack={chooseTrack}
-              />
-            ))
-          : searchResults.slice(0, 4).map((track) => (
-              <Poster
-                key={track.id}
-                track={track}
-                // chooseTrack={chooseTrack}
-              />
-            ))}
+          ? newReleases
+              .slice(0, 4)
+              .map((track) => (
+                <Poster
+                  key={track.id}
+                  track={track}
+                  chooseTrack={chooseTrack}
+                />
+              ))
+          : searchResults
+              .slice(0, 4)
+              .map((track) => (
+                <Poster
+                  key={track.id}
+                  track={track}
+                  chooseTrack={chooseTrack}
+                />
+              ))}
       </div>
     </section>
   );
