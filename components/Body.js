@@ -37,7 +37,27 @@ function Body({ spotifyApi }) {
     });
   }, [search, accessToken]);
 
-  console.log(searchResults);
+  //New Releases
+
+  useEffect(() => {
+    if (!accessToken) return;
+
+    spotifyApi.getNewReleases().then((res) => {
+      setNewReleases(
+        res.body.albums.items.map((track) => {
+          return {
+            id: track.id,
+            artist: track.artists[0].name,
+            title: track.name,
+            uri: track.uri,
+            albumUrl: track.images[0].url,
+          };
+        })
+      );
+    });
+  }, [accessToken]);
+
+  // console.log(newReleases);
 
   // console.log(accessToken);
 
@@ -47,7 +67,27 @@ function Body({ spotifyApi }) {
       <div
         className="grid overflow-y-scroll bg-yellow-400 scrollbar-hide h-96 py-4 grid-cols-2 lg:grid-cols-3 
       xl:grid-cols-4 gap-x-4 gap-y-8 p-4"
-      ></div>
+      >
+        {searchResults.length === 0
+          ? newReleases
+              .slice(0, 4)
+              .map((track) => (
+                <Poster
+                  key={track.id}
+                  track={track}
+                  chooseTrack={chooseTrack}
+                />
+              ))
+          : searchResults
+              .slice(0, 4)
+              .map((track) => (
+                <Poster
+                  key={track.id}
+                  track={track}
+                  chooseTrack={chooseTrack}
+                />
+              ))}
+      </div>
     </section>
   );
 }
