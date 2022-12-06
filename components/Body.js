@@ -15,6 +15,30 @@ function Body({ spotifyApi }) {
     spotifyApi.setAccessToken(accessToken);
   }, [accessToken]);
 
+  //Searching
+
+  useEffect(() => {
+    if (!search) return setSearchResults([]);
+    if (!accessToken) return;
+
+    spotifyApi.searchTracks(search).then((res) => {
+      setSearchResults(
+        res.body.tracks.items.map((track) => {
+          return {
+            id: track.id,
+            artist: track.artists[0].name,
+            title: track.name,
+            uri: track.uri,
+            albumUrl: track.album.images[0].url,
+            popularity: track.popularity,
+          };
+        })
+      );
+    });
+  }, [search, accessToken]);
+
+  console.log(searchResults);
+
   // console.log(accessToken);
 
   return (
