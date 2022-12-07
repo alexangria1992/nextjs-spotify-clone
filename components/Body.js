@@ -8,7 +8,7 @@ function Body({ spotifyApi, chooseTrack }) {
   const { data: session } = useSession();
 
   const [search, setSearch] = useState("");
-  const { accessToken } = session;
+  const accessToken = session?.accessToken;
   const [searchResults, setSearchResults] = useState([]);
   const [newReleases, setNewReleases] = useState([]);
 
