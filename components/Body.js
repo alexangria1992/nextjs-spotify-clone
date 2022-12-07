@@ -89,6 +89,22 @@ function Body({ spotifyApi, chooseTrack }) {
                 />
               ))}
       </div>
+      <div className="flex gap-x-8 absolute min-w-full md:relative ml-6 bg-yellow-700">
+        <div className="hidden xl:inline max-w-[270px] bg-lime-700">
+          <h2 className="text-white font-bold mb-3">Genres</h2>
+          <div className="flex gap-x-2 gap-y-2.5 flex-wrap mb-3 bg-red-100">
+            <div className="genre">Classic</div>
+            <div className="genre">House</div>
+            <div className="genre">Minimal</div>
+            <div className="genre">Hip-hop</div>
+            <div className="genre">Electronic</div>
+            <div className="genre">Chillout</div>
+            <div className="genre">Blues</div>
+            <div className="genre">Country</div>
+            <div className="genre">Techno</div>
+          </div>
+        </div>
+      </div>
     </section>
   );
 }
