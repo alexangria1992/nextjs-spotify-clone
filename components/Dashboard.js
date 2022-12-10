@@ -31,7 +31,7 @@ function Dashboard() {
       <Sidebar />
       <Body spotifyApi={spotifyApi} chooseTrack={chooseTrack} />
       <Right spotifyApi={spotifyApi} chooseTrack={chooseTrack} />
-      <div className="fixed bg-red-400 bottom-0 left-0 right-0 z-50">
+      <div className="fixed  bottom-0 left-0 right-0 z-50">
         <Player accessToken={accessToken} trackUri={playingTrack.uri} />
       </div>
     </main>
