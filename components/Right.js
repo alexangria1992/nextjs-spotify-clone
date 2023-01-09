@@ -31,8 +31,8 @@ function Right({ spotifyApi, chooseTrack }) {
     });
   }, [accessToken]);
   return (
-    <section className="p-4 space-y-8 pr-8 bg-green-700">
-      <div className="flex space-x-2 items-center justify-between bg-orange-500">
+    <section className="p-4 space-y-8 pr-8 ">
+      <div className="flex space-x-2 items-center justify-between ">
         {/* ICONS */}
         <div className="flex items-center space-x-4 border-2 border-[#262626] rounded-full h-12 py-3 px-4">
           <HiOutlineShieldCheck className="text=[#ccc] text-xl" />

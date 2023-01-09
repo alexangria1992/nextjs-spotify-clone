@@ -67,7 +67,7 @@ function Body({ spotifyApi, chooseTrack }) {
     <section className=" ml-24 py-4 space-y-8 md:max-w-6xl flex-grow md:mr-2.5 ">
       <Search search={search} setSearch={setSearch} />
       <div
-        className="grid overflow-y-scroll bg-yellow-400 scrollbar-hide h-96 py-4 grid-cols-2 lg:grid-cols-3 
+        className="grid overflow-y-scroll  scrollbar-hide h-96 py-4 grid-cols-2 lg:grid-cols-3 
       xl:grid-cols-4 gap-x-4 gap-y-8 p-4"
       >
         {searchResults.length === 0
@@ -90,10 +90,10 @@ function Body({ spotifyApi, chooseTrack }) {
                 />
               ))}
       </div>
-      <div className="flex gap-x-8 absolute min-w-full md:relative ml-6 bg-yellow-700">
-        <div className="hidden xl:inline max-w-[270px] bg-lime-700">
+      <div className="flex gap-x-8 absolute min-w-full md:relative ml-6 ">
+        <div className="hidden xl:inline max-w-[270px]">
           <h2 className="text-white font-bold mb-3">Genres</h2>
-          <div className="flex gap-x-2 gap-y-2.5 flex-wrap mb-3 bg-red-100">
+          <div className="flex gap-x-2 gap-y-2.5 flex-wrap mb-3 ">
             <div className="genre">Classic</div>
             <div className="genre">House</div>
             <div className="genre">Minimal</div>
@@ -111,12 +111,12 @@ function Body({ spotifyApi, chooseTrack }) {
 
         {/* Tracks */}
 
-        <div className="bg-sky-900">
+        <div className="w-full pr-11">
           <h2 className="text-white font-bold mb-3">
             {searchResults.length === 0 ? "New Releases" : "Tracks"}
           </h2>
 
-          <div className="space-y-3 border-2 border-[#262626] rounded-2xl p-3 bg-yellow-600 overflow-y-scroll h-[1000px] md:h-96 scrollbar-thin scrollbar-thumb-gray-600 scrollbar-thumb-rounded hover:scrollbar-thumb-gray-500 w-[830px]">
+          <div className="space-y-3 border-2 border-[#262626] rounded-2xl p-3  overflow-y-scroll h-[1000px] md:h-96 scrollbar-thin scrollbar-thumb-gray-600 scrollbar-thumb-rounded hover:scrollbar-thumb-gray-500 w-[830px]">
             {searchResults.length === 0
               ? newReleases
                   .slice(4, newReleases.length)

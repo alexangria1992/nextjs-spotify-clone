@@ -28,7 +28,7 @@ function Poster({ track, chooseTrack }) {
         className="h-full w-full absolute rounded-[50px] inset-0 object-cover opacity-80 group-hover:opacity-100"
       />
 
-      <div className="absolute bottom-10 inset-x-0 ml-4 flex items-center space-x-3.5 bg-emerald-900">
+      <div className="absolute bottom-10 inset-x-0 ml-4 flex items-center space-x-3.5 ">
         <div
           className="h-10 w-10 bg-[#15883e] rounded-full flex items-center justify-center 
         group-hover:bg-[#1db954] flex-shrink-0"
